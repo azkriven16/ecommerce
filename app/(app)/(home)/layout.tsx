@@ -6,6 +6,7 @@ import { Category } from "@/payload-types";
 import { Navbar } from "./navbar";
 import { Footer } from "./footer";
 import { SearchFilters } from "./search-filters";
+import { CustomCategory } from "./types";
 
 export default async function Layout({ children }: PropsWithChildren) {
   const payload = await getPayload({
@@ -21,9 +22,10 @@ export default async function Layout({ children }: PropsWithChildren) {
         exists: false,
       },
     },
+    sort: "name",
   });
 
-  const formattedData = data.docs.map((doc) => ({
+  const formattedData: CustomCategory[] = data.docs.map((doc) => ({
     ...doc,
     subcategories: (doc.subcategories?.docs ?? []).map((doc) => ({
       // cuz of depth 1 doc will be type category
@@ -31,7 +33,6 @@ export default async function Layout({ children }: PropsWithChildren) {
       subcategories: undefined,
     })),
   }));
-  console.log(data);
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
