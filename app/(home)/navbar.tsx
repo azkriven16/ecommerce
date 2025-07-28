@@ -90,11 +90,10 @@ export const Navbar = () => {
           variant="noShadow"
           onClick={() => setIsSidebarOpen(true)}
           className="[&_svg]:size-6 shadow-none border-transparent border-none bg-white"
-          aria-label="Open navigation menu"
-          aria-expanded={isSidebarOpen}
         >
           <MenuIcon />
         </Button>
+      </div>
     </nav>
   );
 };
