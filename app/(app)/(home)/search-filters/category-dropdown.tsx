@@ -48,7 +48,7 @@ export const CategoryDropdown = ({
         <Button
           variant="noShadow"
           className={cn(
-            "h-11 px-4 bg-transparent rounded-full hover:bg-white hover:border-primary text-black border-background",
+            "h-11 px-4 bg-transparent rounded-full hover:bg-white hover:border-primary text-black border-[#f5f5f5]",
             isActive &&
               !isNavigationHovered &&
               "bg-white border-primary border-solid",
