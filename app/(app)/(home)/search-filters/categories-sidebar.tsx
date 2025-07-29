@@ -29,8 +29,6 @@ export const CategoriesSidebar = ({ open, onOpenChange }: Props) => {
     CategoriesGetManyOutput[0] | null
   >(null);
 
-  // if we have parent categories, show else show root categories
-
   const currentCategories = parentCategories ?? data ?? [];
 
   const handleOpenChange = (open: boolean) => {
