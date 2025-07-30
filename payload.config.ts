@@ -22,6 +22,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Categories],
+  // cookiePrefix: "limeroad",
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
