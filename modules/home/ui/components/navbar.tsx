@@ -3,14 +3,14 @@
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
+import { useTRPC } from "@/trpc/client";
+import { useQuery } from "@tanstack/react-query";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { NavarSidebar } from "./navbar-sidebar";
 import { MenuIcon } from "lucide-react";
-import { useTRPC } from "@/trpc/client";
-import { useQuery } from "@tanstack/react-query";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,8 +25,12 @@ interface NavbarItemProps {
 
 const NavbarItem = ({ href, children, isactive }: NavbarItemProps) => (
   <Button
-    variant={isactive ? "default" : "reverse"}
-    className={cn(isactive ? "bg-lime-400" : "bg-background")}
+    variant={isactive ? "default" : "noShadow"}
+    className={cn(
+      isactive
+        ? "bg-lime-400"
+        : "bg-transparent border-transparent hover:bg-lime-400"
+    )}
     asChild
   >
     <Link href={href}>{children}</Link>

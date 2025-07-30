@@ -55,7 +55,10 @@ export const CategoryDropdown = ({
             isOpen && "bg-white border-primary"
           )}
         >
-          <Link href={`/${category.slug === "all" ? "" : category.slug}`}>
+          <Link
+            className="h-full w-full mt-1"
+            href={`/${category.slug === "all" ? "" : category.slug}`}
+          >
             {category.name}
           </Link>
         </Button>
