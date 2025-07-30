@@ -93,6 +93,7 @@ export const Categories = ({ data }: CategoriesProps) => {
         onMouseLeave={() => setIsAnyHovered(false)}
         className="flex flex-nowrap items-center gap-3"
       >
+        {/* TODO: */}
         {data.slice(0, visibleCount).map((category) => {
           return (
             <div key={category.id}>
