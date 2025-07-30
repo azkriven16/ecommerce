@@ -29,9 +29,6 @@ export const SearchFilters = () => {
       (subcategory) => subcategory.slug === activeSubCategory
     )?.name || null;
 
-  console.log(activeCategoryName, "1");
-  console.log(activeSubCategoryName, "3");
-
   return (
     <div
       className="px-4 lg:px-12 py-8 border-b flex flex-col gap-4 w-full"
