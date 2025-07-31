@@ -1,4 +1,5 @@
 import { TRPCReactProvider } from "@/trpc/client";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -28,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <TRPCReactProvider>
-          {children}
-          <Toaster richColors position="top-center" />
-        </TRPCReactProvider>
+        <NuqsAdapter>
+          <TRPCReactProvider>
+            {children}
+            <Toaster richColors position="top-center" />
+          </TRPCReactProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );

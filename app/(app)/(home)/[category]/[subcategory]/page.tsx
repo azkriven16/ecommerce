@@ -14,7 +14,6 @@ export default async function SubCategoryPage({ params }: Props) {
 
   const queryClient = getQueryClient();
 
-  // Prefetch with category filter
   void queryClient.prefetchQuery(
     trpc.products.getMany.queryOptions({ category: subCategory })
   );

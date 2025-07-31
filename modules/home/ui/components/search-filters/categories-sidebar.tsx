@@ -40,7 +40,6 @@ export const CategoriesSidebar = ({ open, onOpenChange }: Props) => {
 
   const handleCategoryClick = (category: CategoriesGetManyOutput[0]) => {
     if (category.subcategories && category.subcategories.length > 0) {
-      // @ts-expect-error because of sucategories idk
       setParentCategories(category.subcategories as CategoriesGetManyOutput);
       setSelectedCategory(category);
     } else {
